@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 int evaluatePostfixExpression_2(char *, int memory_smp[], int *count_command);
 int calculate_2(int, int, char, int memory_smp[], int *count_command);
 
@@ -12,12 +11,10 @@ int main(void) {
   int search_flag(data * base, int noname);
   char infix[150];
   char postfix[150];
-
   int line_simple_comands_input_print(int cmd, data *table, int token,
                                       int memory[]);
-
+  
   int past_in_table_cons_or_value(data * table, char *str_tok);
-
   int goto_search(data * table, char *token);
   int count_st = 0;
   int search_cmd(char *dict[15], char *token);
@@ -26,7 +23,6 @@ int main(void) {
   data symbolTable[100];
   int cnt = 0;
   int d = 0;
-
   int flags[100];
   int dz = 0;
   int mem_smp[100];
@@ -46,27 +42,23 @@ int main(void) {
   char buf_data[150][150] = {{0}};
   int val_if[2] = {0};
   int second_buf = 0;
-
+ 
   for (; d != 100; d++) {
-
     strcpy((symbolTable + d)->symbol, "0");
     (symbolTable + d)->location = 0;
     (symbolTable + d)->type = 'q';
     mem_smp[d] = 0;
     flags[d] = -1;
   }
-
+  
   file_buf = fopen("file.smp", "r");
-
+  
   for (d = 0; feof(file_buf) == 0; ++d) {
-
     fgets(&buf_data[d][0], 150, file_buf);
   }
-
   fclose(file_buf);
-
   memcpy(copy_buf_data, buf_data, sizeof(char) * 150 * 150);
-
+  
   for (d = 0; buf_data[d][0] != 0; d++) {
 
     buffer = strtok(&buf_data[d][0], " ");
