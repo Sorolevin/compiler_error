@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #define MEM 100
 #define READ 10
 #define WRITE 11
@@ -14,46 +13,28 @@
 #define SUBSTRACT 31
 #define DIVIDE 32
 #define MUL 33
-
 #define POW 34
 #define MOD 35
-
 #define ENTSTR 50
-
 #define PRTSTR 51
-
 #define BRANCH 40
 #define BRANCHNEG 41
 #define BRANCHZERO 42
 #define HALT 43
 int main(void) {
   void dump_file(int word[]);
-
-  FILE *cfPtr;
-
   char buf[5];
   void branch(int *cnt, int accum, int nxt, int comn);
   int buf_mem[100] = {0};
   void dump(int word[]);
   int x = 0, y = 0, s = 0;
-  // int mem[MEM] = {0};
   int mem[MEM];
-
   for (; x != MEM; x++) {
     mem[x] = 0;
   }
-
   int acc = 0, d = 0;
   int ins_cnt = 0, ins_rgr = 0, op_code = 0, operand = 1;
-  /*
-    char *s_mem[MEM][4];
-
-
-    memset(c_mem, 0, sizeof(mem));
-    memset(s_mem, '0', sizeof(s_mem));
-  */
   int b = 0, l, r = 0, m = 0, ti = 0, sign = 0;
-
   mem[0] = 2098;
   mem[1] = 2199;
   mem[2] = 2096;
@@ -105,51 +86,7 @@ int main(void) {
        mem[19] = 0001;
        mem[20] = 0007;
    */
-  /*
-cfPtr = fopen("rtr.sml", "r");
-
-    for (d = 0; feof(cfPtr) == 0; ++d) {
-      fscanf(cfPtr, "%d\n", &mem[d]);
-
-      // fgets ((char *)&s_mem[d][0], 100, cfPtr);
-    }
-
-    fclose(cfPtr);
-
-  mem[96] = 1;
-  */
-  /*
-    cfPtr = fopen("simp.base", "r");
-
-    for (d = 0; feof(cfPtr) == 0; ++d) {
-      fscanf(cfPtr, "%d %d\n", &y, &s);
-      mem[y] = s;
-
-      printf("%d %d\n", s, y);
-    }
-
-    fclose(cfPtr);
-  */
-  /*
-    for (d = 0; c_mem[d] != 0; d++) {
-      y = c_mem[d];
-      s = c_mem[d];
-
-      mem[y] = s;
-      printf("%d %d\n", y, s);
-    }
-  */
-  /*
-    for (; (char)s_mem[b][0] != '0'; b++) {
-
-      buf_mem[b] = strtol((void *)&s_mem[b][0], NULL, 10);
-
-      //	sprintf((int)  &mem[b], "%d", s_mem[b][0]);
-    }
-
-  */
-
-  while ((mem[operand] > -9999) && (mem[operand] < 9999) && sign != 1) {
+ while ((mem[operand] > -9999) && (mem[operand] < 9999) && sign != 1) {
 
     ins_rgr = (mem[ins_cnt]);
 
