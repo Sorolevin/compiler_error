@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #define MEM 100
 #define READ 10
 #define WRITE 11
